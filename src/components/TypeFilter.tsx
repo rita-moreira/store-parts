@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -16,10 +16,11 @@ const TypeFilter: React.FC<Props> = ({ onSelectedTypeChange }) => {
 
   const [type, setType] = useState('');
 
-  const handleChange = (event: SelectChangeEvent) => {
+  const handleChange = useCallback((event: SelectChangeEvent) => {
     setType(event.target.value);
     onSelectedTypeChange(event.target.value);
-  };
+  }, [onSelectedTypeChange]);
+
   return (
     <FormControl sx={formControlStyle}>
       <InputLabel id="select-helper-label">Type</InputLabel>
