@@ -30,12 +30,12 @@ describe('App tests', () => {
     cy.get('#skeleton').should('not.exist');
     cy.get('[data-testid=part]').should('have.length', 11);
   });
-  it('should have Mouse 1 has first element', () => {
+  it('should have Mouse 1 as first element', () => {
     cy.wait(13000);
     cy.get('#skeleton').should('not.exist');
     cy.get('[data-testid=part]').first().contains('Mouse 1');
   });
-  it('should have Monitor 1 has first element', () => {
+  it('should have Monitor 1 as first element', () => {
     cy.wait(13000);
     cy.get('#skeleton').should('not.exist');
     cy.get('#button-reOrder').click();
